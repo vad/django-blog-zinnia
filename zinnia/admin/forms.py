@@ -17,7 +17,7 @@ class CategoryAdminForm(forms.ModelForm):
     parent = TreeNodeChoiceField(label=_('parent category').capitalize(),
                                  required=False,
                                  empty_label=_('No parent category'),
-                                 queryset=Category.tree.all(),
+                                 queryset=Category.objects.all(),
                                  level_indicator=u'|--')
 
     def __init__(self, *args, **kwargs):

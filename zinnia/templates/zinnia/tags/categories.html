@@ -1,5 +1,6 @@
-{% load i18n mptt_tags %}
+{% load i18n %}
 
+{% comment %}
 {% for category, structure in categories|tree_info %}
   {% if structure.new_level %}<ul><li>{% else %}</li><li>{% endif %}
     <a href="{{ category.get_absolute_url }}" title="{{ category.title }}">{{ category.title }}</a> 
@@ -12,5 +13,4 @@
   </li>
 </ul>
 {% endfor %}
-
-
+{% endcomment %}

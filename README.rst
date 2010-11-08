@@ -53,7 +53,6 @@ Dependencies
 Make sure to install these packages prior to installation :
 
  * akismet
- * django-mptt (0.4.1)
  * django-tagging
  * BeautifulSoup
 
@@ -93,7 +92,6 @@ INSTALLED_APPS section of your project's settings. ::
   ...   'django.contrib.sites',
   ...   'django.contrib.admin',
   ...   'tagging',
-  ...   'mptt',
   ...   'zinnia',)
 
 Template Context Processors

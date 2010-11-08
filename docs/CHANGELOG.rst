@@ -7,6 +7,7 @@ CHANGELOG
 * Using Microformats
 * Mails for comment reply
 * Entry model can be extended
+* Remove django-mptt dependency
 * Zinnia to Wordpress utility command
 * And a lot of bug fixes
 

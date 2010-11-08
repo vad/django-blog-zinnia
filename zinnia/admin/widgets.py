@@ -24,8 +24,7 @@ class TreeNodeChoiceField(forms.ModelChoiceField):
     def label_from_instance(self, obj):
         """Creates labels which represent the tree level of each node
         when generating option labels."""
-        return u'%s %s' % (self.level_indicator * getattr(obj,
-                                                          obj._meta.level_attr),
+        return u'%s %s' % (self.level_indicator * len(obj.get_ancestors()),
                            smart_unicode(obj))
 
 

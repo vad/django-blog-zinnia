@@ -3,28 +3,20 @@
     "pk": 2, 
     "model": "zinnia.category", 
     "fields": {
-      "rght": 2, 
       "description": "All entries containing tests.", 
       "parent": null, 
       "slug": "tests", 
-      "title": "Tests", 
-      "level": 0, 
-      "lft": 1, 
-      "tree_id": 1
+      "title": "Tests"
     }
   }, 
   {
     "pk": 1, 
     "model": "zinnia.category", 
     "fields": {
-      "rght": 2, 
       "description": "All uncategorized entries.", 
       "parent": null, 
       "slug": "uncategorized", 
-      "title": "Uncategorized", 
-      "level": 0, 
-      "lft": 1, 
-      "tree_id": 2
+      "title": "Uncategorized"
     }
   }, 
   {

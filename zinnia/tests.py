@@ -412,6 +412,30 @@ class CategoryTestCase(TestCase):
         self.categories[1].save()
         self.assertEqual(self.categories[1].tree_path, 'category-1/category-2')
 
+    def test_get_ancestors(self):
+        self.categories[1].parent = self.categories[0]
+        self.categories[1].save()
+
+        self.assertEqual(list(self.categories[0].get_ancestors()), [])
+        self.assertEqual(list(self.categories[1].get_ancestors()),
+                         [self.categories[0]])
+        new_category = Category.objects.create(title='Category 3',
+                                               slug='category-3',
+                                               parent=self.categories[1])
+        self.assertEqual(list(new_category.get_ancestors()),
+                         [self.categories[1], self.categories[0]])
+
+    def test_get_children(self):
+        self.categories[1].parent = self.categories[0]
+        self.categories[1].save()
+        self.assertEqual(list(self.categories[0].get_children()),
+                         [self.categories[1]])
+        new_category = Category.objects.create(title='Category 3',
+                                               slug='category-3',
+                                               parent=self.categories[0])
+        self.assertEqual(list(self.categories[0].get_children()),
+                         [self.categories[1], new_category])
+
 
 class ZinniaViewsTestCase(TestCase):
     """Test cases for generic views used in the application,

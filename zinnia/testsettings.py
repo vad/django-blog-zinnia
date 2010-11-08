@@ -19,7 +19,6 @@ INSTALLED_APPS = ['django.contrib.contenttypes',
                   'django.contrib.auth',
                   #'south',
                   'django_xmlrpc',
-                  'mptt',
                   'tagging', 'zinnia']
 
 XMLRPC_METHODS = ZINNIA_XMLRPC_METHODS
